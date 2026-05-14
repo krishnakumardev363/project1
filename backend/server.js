@@ -11,12 +11,29 @@ import itemRoutes from "./routes/items.js";
 dotenv.config();
 const app = express();
 
-// CORS — allow localhost dev + Vercel production
-app.use(cors({
-  origin: "https://ksnothingone.netlify.app" || process.env.CLIENT_URL || "http://localhost:5173",
-  credentials: true
-}));
+import cors from "cors";
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ksnothingone.netlify.app",
+  
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests without origin (e.g. Postman)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Routes
