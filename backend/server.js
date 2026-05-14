@@ -16,6 +16,7 @@ import cors from "cors";
 const allowedOrigins = [
   "http://localhost:5173",
   "https://ksnothingone.netlify.app",
+  process.env.CLIENT_URL, // Add this line to include the CLIENT_URL from .env  
   
 ];
 
