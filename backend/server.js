@@ -14,20 +14,24 @@ dotenv.config();
 const app = express();
 
 // CORS — allow localhost dev + Vercel production
-const allowedOrigins = [
-  "http://localhost:5173",
-  process.env.CLIENT_URL,
-].filter(Boolean);
-
 app.use(cors({
-  origin: (origin, callback) => {
-    // allow requests with no origin (mobile apps, curl, Postman)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-    callback(new Error("Not allowed by CORS"));
-  },
-  credentials: true,
+  origin: "https://ksnothingone.netlify.app" || process.env.CLIENT_URL || "http://localhost:5173",
+  credentials: true
 }));
+// const allowedOrigins = [
+//   "http://localhost:5173",
+//   process.env.CLIENT_URL,
+// ].filter(Boolean);
+
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     // allow requests with no origin (mobile apps, curl, Postman)
+//     if (!origin) return callback(null, true);
+//     if (allowedOrigins.includes(origin)) return callback(null, true);
+//     callback(new Error("Not allowed by CORS"));
+//   },
+//   credentials: true,
+// }));
 
 app.use(express.json());
 
