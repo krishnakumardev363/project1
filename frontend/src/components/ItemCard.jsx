@@ -25,9 +25,10 @@ function ViewModal({ item, onClose }) {
       >
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-5">
-          <h2 className="text-xl font-semibold text-slate-100 leading-snug">
+          {/* <h2 className="text-xl font-semibold text-slate-100 leading-snug">
             {item.title}
-          </h2>
+          </h2> */}
+          <h2 className="font-medium text-slate-100 leading-snug break-words min-w-0">{item.title}</h2>
           <button
             onClick={onClose}
             className="p-1.5 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-slate-800 transition-colors shrink-0"
@@ -41,9 +42,10 @@ function ViewModal({ item, onClose }) {
         {/* Description */}
         <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 mb-5 min-h-[100px]">
           {item.description ? (
-            <p className="text-slate-300 text-sm leading-relaxed whitespace-pre-wrap">
-              {item.description}
-            </p>
+            // <p className="text-slate-300 text-sm leading-relaxed whitespace-pre-wrap">
+            //   {item.description}
+            // </p>
+            <p className="text-sm text-slate-400 mb-4 leading-relaxed break-words">{item.description}</p>
           ) : (
             <p className="text-slate-600 text-sm italic">No description added.</p>
           )}
@@ -88,7 +90,8 @@ export default function ItemCard({ item, onEdit, onDelete }) {
         onClick={() => setViewing(true)}
       >
         <div className="flex items-start justify-between gap-3 mb-3">
-          <h3 className="font-medium text-slate-100 leading-snug">{item.title}</h3>
+          {/* <h3 className="font-medium text-slate-100 leading-snug">{item.title}</h3> */}
+          <h2 className="... break-words min-w-0">{item.title}</h2>
 
           {/* Edit / Delete — stop propagation so card click doesn't fire */}
           <div className="flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
@@ -114,9 +117,10 @@ export default function ItemCard({ item, onEdit, onDelete }) {
         </div>
 
         {item.description && (
-          <p className="text-sm text-slate-400 mb-4 leading-relaxed line-clamp-2">
-            {item.description}
-          </p>
+          // <p className="text-sm text-slate-400 mb-4 leading-relaxed line-clamp-2">
+          //   {item.description}
+          // </p>
+          <p className="... break-words overflow-wrap-anywhere">{item.description}</p>
         )}
 
         <div className="flex items-center gap-2 flex-wrap">
