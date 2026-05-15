@@ -73,7 +73,7 @@ export default function DashboardPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
           <h1 className="text-2xl font-semibold">Dashboard</h1>
-          <p className="text-slate-400 text-sm mt-0.5">Your personal item manager</p>
+          <p className="text-slate-400 text-sm mt-0.5">Your personal notes manager</p>
         </div>
         <button onClick={() => setModal("create")} className="btn-primary shrink-0">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

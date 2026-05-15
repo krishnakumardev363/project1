@@ -8,7 +8,8 @@ export default function HomePage() {
     <div className="max-w-5xl mx-auto px-4 py-20 text-center">
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-medium mb-8">
         <span className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse" />
-        Notes · Stories · Tasks
+        {/* Notes · Stories · Tasks */}
+        Krishna
       </div>
 
       <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">
