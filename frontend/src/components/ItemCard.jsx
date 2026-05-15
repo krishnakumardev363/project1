@@ -90,8 +90,8 @@ export default function ItemCard({ item, onEdit, onDelete }) {
         onClick={() => setViewing(true)}
       >
         <div className="flex items-start justify-between gap-3 mb-3">
-          {/* <h3 className="font-medium text-slate-100 leading-snug">{item.title}</h3> */}
-          <h2 className="... break-words min-w-0">{item.title}</h2>
+          <h3 className="font-medium text-slate-100 leading-snug">{item.title}</h3>
+          {/* <h2 className="... break-words min-w-0">{item.title}</h2> */}
 
           {/* Edit / Delete — stop propagation so card click doesn't fire */}
           <div className="flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
@@ -117,10 +117,10 @@ export default function ItemCard({ item, onEdit, onDelete }) {
         </div>
 
         {item.description && (
-          // <p className="text-sm text-slate-400 mb-4 leading-relaxed line-clamp-2">
-          //   {item.description}
-          // </p>
-          <p className="... break-words overflow-wrap-anywhere">{item.description}</p>
+          <p className="text-sm text-slate-400 mb-4 leading-relaxed line-clamp-2">
+            {item.description}
+          </p>
+          // <p className="... break-words overflow-wrap-anywhere">{item.description}</p>
         )}
 
         <div className="flex items-center gap-2 flex-wrap">
